@@ -1,0 +1,40 @@
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+  (click)="loaddata(post)">Modifier</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Article</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="col-md-12 col-xs-12">
+          <label for="titre">titre:</label>
+          <input type="text" class="form-control" name="titre2" [(ngModel)]="titre2">
+        </div>
+        <div class="col-md-12 col-xs-12">
+          <label for="description">description:</label>
+          <input type="text" class="form-control" name="description2" [(ngModel)]="description2">
+        </div>
+        <div class="col-md-12 col-xs-12 mt-2">
+        <select class="form-control" [(ngModel)]="categorie2">
+        <option disabled>Choose your Catégory</option>
+        <option *ngFor="let cat of mycategories" [ngValue]="cat">
+          {{ cat }}
+        </option>
+      </select>
+      </div>
+      <div class="col-md-12 col-xs-12 mt-2">
+        <input type="date"  [(ngModel)]="date2">
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="setchanges()">Save changes</button>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
